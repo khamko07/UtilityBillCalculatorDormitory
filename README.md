@@ -47,3 +47,7 @@ cd utility-calculator
 ## Contact
 
 Connect on Facebook: [khamko xys](https://www.facebook.com/khamkoxys)
+
+## Demo
+
+Link: https://khamko07.github.io/UtilityBillCalculatorDormitory/
