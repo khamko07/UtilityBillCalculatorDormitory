@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tính Tiền Điện Nước Ký Túc Xá</title>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+            rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Tính Tiền Điện Nước Ký Túc Xá</h1>
+            <form id="utilityForm">
+                <div class="input-group">
+                    <label for="totalCost">Tổng chi phí điện nước (VNĐ):</label>
+                    <input type="number" id="totalCost" required>
+                </div>
+                <div id="personList">
+                    <div class="person-item">
+                        <input type="text" class="person-name"
+                            placeholder="Tên người" required>
+                        <input type="number" class="person-days"
+                            placeholder="Số ngày ở" required>
+                        <button type="button" class="remove-person"
+                            title="Xóa người này">&times;</button>
+                    </div>
+                </div>
+                <button type="button" id="addPerson">Thêm Người</button>
+                <button type="submit" id="calculate">Tính Toán</button>
+            </form>
+            <div id="results"></div>
+        </div>
+        <button class="dark-mode-toggle" title="Chuyển đổi chế độ tối/sáng">
+            <i class="fas fa-moon"></i>
+        </button>
+        <div class="footer">
+            <p>© 2024 Khamko. All rights reserved.</p>
+            <p><a href="https://www.facebook.com/khamkoxys"><i
+                        class="fab fa-facebook"> : khamko xys</i></a>.</p>
+
+        </div>
+        <script src="app.js"></script>
+
+    </body>
+</html>
