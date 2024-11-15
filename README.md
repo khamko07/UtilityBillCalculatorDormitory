@@ -36,13 +36,13 @@ index.html
  in a web browser:
 
 ```sh
-git clone <repository-url>
-cd utility-calculator
+git clone https://github.com/khamko07/UtilityBillCalculatorDormitory.git
+cd UtilityBillCalculatorDormitory
 ```
 
 ## License
 
-© 2024 Khamko. All rights reserved.
+© 2025 Khamko. All rights reserved.
 
 ## Contact
 
