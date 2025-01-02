@@ -20,7 +20,10 @@ This is a web application to calculate and split utility bills among roommates i
 
 To get started with the project, simply clone the repository and open `index.html` in your web browser.
 
+## Demo: https://khamko07.github.io/UtilityBillCalculatorDormitory/
 ```sh
 git clone https://github.com/yourusername/UtilityBillCalculatorDormitory.git
 cd UtilityBillCalculatorDormitory
 open index.html
+
+
