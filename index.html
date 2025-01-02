@@ -30,6 +30,7 @@
                 <button type="button" id="addPerson">Thêm Người</button>
                 <button type="submit" id="calculate">Tính Toán</button>
             </form>
+            <button type="button" id="printInvoice">In Hóa Đơn</button>
             <div id="results"></div>
         </div>
         <button class="dark-mode-toggle" title="Chuyển đổi chế độ tối/sáng">
@@ -40,6 +41,13 @@
             <p><a href="https://www.facebook.com/khamkoxys"><i
                         class="fab fa-facebook"> : khamko xys</i></a>.</p>
 
+        </div>
+        <div id="invoiceModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="invoiceContent"></div>
+                <button id="printButton">In</button>
+            </div>
         </div>
         <script src="app.js"></script>
 

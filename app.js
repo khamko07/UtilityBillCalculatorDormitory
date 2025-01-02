@@ -27,6 +27,21 @@ document.addEventListener("DOMContentLoaded", function () {
   // Dark mode toggle
   darkModeToggle.addEventListener("click", toggleDarkMode);
 
+  const printInvoiceButton = document.getElementById("printInvoice");
+  const invoiceModal = document.getElementById("invoiceModal");
+  const closeModal = document.querySelector(".close");
+  const printButton = document.getElementById("printButton");
+
+  printInvoiceButton.addEventListener("click", showInvoice);
+  closeModal.addEventListener("click", () => invoiceModal.style.display = "none");
+  printButton.addEventListener("click", () => window.print());
+
+  window.addEventListener("click", function (event) {
+    if (event.target == invoiceModal) {
+      invoiceModal.style.display = "none";
+    }
+  });
+
   function addPerson() {
     const personItem = document.createElement("div");
     personItem.classList.add("person-item");
@@ -125,5 +140,70 @@ document.addEventListener("DOMContentLoaded", function () {
       icon.classList.remove("fa-sun");
       icon.classList.add("fa-moon");
     }
+  }
+
+  function showInvoice() {
+    const totalCost = parseFloat(document.getElementById("totalCost").value);
+    const people = document.querySelectorAll(".person-item");
+    let totalDays = 0;
+    const personData = [];
+
+    people.forEach((person) => {
+        const name = person.querySelector(".person-name").value;
+        const days = parseInt(person.querySelector(".person-days").value);
+        if (name && !isNaN(days)) {
+            totalDays += days;
+            personData.push({ name, days });
+        }
+    });
+
+    if (isNaN(totalCost) || totalDays === 0) {
+        showError("Vui lòng nhập đầy đủ thông tin hợp lệ.");
+        return;
+    }
+
+    const invoiceContent = document.getElementById("invoiceContent");
+    const date = new Date().toLocaleDateString("vi-VN");
+    const invoiceId = `HD${Date.now()}`;
+
+    let invoiceHTML = `
+        <h2>Hóa Đơn Tính Tiền Điện Nước</h2>
+        <p>Ngày lập hóa đơn: ${date}</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tên người sử dụng</th>
+                    <th>Số ngày ở</th>
+                    <th>Chi phí tương ứng (VNĐ)</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+
+    personData.forEach((person) => {
+        const cost = (person.days / totalDays) * totalCost;
+        invoiceHTML += `
+            <tr>
+                <td>${person.name}</td>
+                <td>${person.days}</td>
+                <td>${cost.toLocaleString("vi-VN", {
+                    style: "currency",
+                    currency: "VND",
+                })}</td>
+            </tr>
+        `;
+    });
+
+    invoiceHTML += `
+            </tbody>
+        </table>
+        <p>Tổng chi phí điện nước: ${totalCost.toLocaleString("vi-VN", {
+            style: "currency",
+            currency: "VND",
+        })}</p>
+    `;
+
+    invoiceContent.innerHTML = invoiceHTML;
+    invoiceModal.style.display = "block";
   }
 });
