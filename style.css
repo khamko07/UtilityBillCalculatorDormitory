@@ -13,7 +13,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'times new roman', sans-serif;
     background-color: var(--primary-color);
     color: var(--text-color);
     line-height: 1.6;
@@ -278,7 +278,7 @@ body.dark-mode .dark-mode-toggle {
 }
 
 #invoiceContent {
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     line-height: 1.6;
 }
 
@@ -341,3 +341,49 @@ body.dark-mode .dark-mode-toggle {
 #printButton:hover {
     background-color: #45a049;
 }
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* khoảng cách giữa các nút */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .close {
+        font-size: 24px;
+    }
+
+    #invoiceContent h2 {
+        font-size: 1.5em;
+    }
+
+    #invoiceContent th, #invoiceContent td {
+        padding: 6px;
+    }
+
+    #printButton {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .close {
+        font-size: 26px;
+    }
+
+    #invoiceContent h2 {
+        font-size: 2em;
+    }
+
+    #invoiceContent th, #invoiceContent td {
+        padding: 7px;
+    }
+
+    #printButton {
+        padding: 9px 18px;
+        font-size: 15px;
+    }
+}
+

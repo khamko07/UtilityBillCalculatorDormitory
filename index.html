@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tính Tiền Điện Nước Ký Túc Xá</title>
+        <title>Tính tiền điện nước trong phòng(KTX)</title>
         <link
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
             rel="stylesheet">
@@ -11,7 +11,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>Tính Tiền Điện Nước Ký Túc Xá</h1>
+            <h1>Tính tiền điện nước trong phòng(KTX)</h1>
             <form id="utilityForm">
                 <div class="input-group">
                     <label for="totalCost">Tổng chi phí điện nước (VNĐ):</label>
@@ -27,10 +27,12 @@
                             title="Xóa người này">&times;</button>
                     </div>
                 </div>
-                <button type="button" id="addPerson">Thêm Người</button>
-                <button type="submit" id="calculate">Tính Toán</button>
+                <div class="button-container">
+                    <button type="button" id="addPerson">Thêm Người</button>
+                    <button type="submit" id="calculate">Tính Toán</button>
+                    <button type="button" id="printInvoice">In Hóa Đơn</button>
+                </div>
             </form>
-            <button type="button" id="printInvoice">In Hóa Đơn</button>
             <div id="results"></div>
         </div>
         <button class="dark-mode-toggle" title="Chuyển đổi chế độ tối/sáng">
@@ -38,9 +40,7 @@
         </button>
         <div class="footer">
             <p>© 2024 Khamko. All rights reserved.</p>
-            <p><a href="https://www.facebook.com/khamkoxys"><i
-                        class="fab fa-facebook"> : khamko xys</i></a>.</p>
-
+            <p><a href="https://www.facebook.com/khamkoxys"  title="khamko xys"><i class="fab fa-facebook"></i></a></p>
         </div>
         <div id="invoiceModal" class="modal">
             <div class="modal-content">
